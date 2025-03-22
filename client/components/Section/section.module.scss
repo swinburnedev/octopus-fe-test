@@ -1,0 +1,10 @@
+.section {
+    padding: 1rem;
+
+    @media (min-width: 1280px) {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 540px 1fr;
+        padding: 2rem 0;
+    }
+}

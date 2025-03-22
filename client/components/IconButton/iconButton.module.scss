@@ -1,0 +1,12 @@
+.icon-button {
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    height: 2.75rem;
+    width: 2.75rem;
+
+    &:hover {
+        border: 1px solid var(--sohoLights);
+		border-radius: 5px;
+    }
+}

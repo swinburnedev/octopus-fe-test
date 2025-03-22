@@ -28,3 +28,24 @@ body {
   height: 100vh;
   margin: 0 auto;
 }
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+}
+
+.skip-link:focus {
+  background-color: white;
+  border: 1px solid var(--hemocyanin);
+  border-radius: 90px;
+  padding: 0.5rem;
+  top: 0.25rem;
+  left: 0.25rem;
+  z-index: 100;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0;
+}
