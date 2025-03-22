@@ -13,6 +13,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: Gotham, helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5rem;
   color: var(--ice);
 }
 
@@ -45,7 +47,40 @@ body {
   z-index: 100;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ice);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
 h1 {
   font-size: 2rem;
-  margin-top: 0;
+  line-height: 2.75rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+// Utility classes
+.bg-hemocyanin {
+  background-color: var(--hemocyanin);
+}
+
+.bg-siphon {
+  background-color: var(--siphon);
+}
+
+.container {
+    margin: 1rem 0;
+    padding: 1rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.color-purple-haze {
+  color: var(--purpleHaze);
 }

@@ -17,7 +17,7 @@ const Layout = ({children, description, title}: LayoutProps) => {
                 <title>{title}</title>
                 <meta name="description" content={description} />
             </Head>
-            <div id="main" className={styles.container}>
+            <div id="main" className={styles.layout}>
                 <Header />
                 {children}
                 <Footer />

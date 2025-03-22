@@ -1,0 +1,33 @@
+.button {
+	align-items: center;
+	background-color: var(--sohoLights);
+	border-radius: 1rem;
+	border: 1px solid var(--sohoLights);
+	color: var(--hemocyanin);
+	display: flex;
+	font-size: 1.25rem;
+	font-weight: 600;
+	padding: 1rem;
+	height: 44px;
+	min-width: 44px;
+	justify-content: center;
+
+	&:hover {
+		border: 1px solid var(--purpleHaze);
+		color: var(--ice);
+		cursor: pointer;
+	}
+}
+
+.fullWidth {
+	width: 100%;
+}
+
+.disabled {
+    background-color: var(--plum);
+	border: 1px solid var(--plum);
+	color: white;
+    position: relative;
+    opacity: 0.8;
+    pointer-events: none;
+}

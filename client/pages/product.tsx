@@ -3,6 +3,10 @@ import Image from "next/image"
 
 import Layout from "../components/Layout"
 import Section from "../components/Section"
+import Table, {type TableData} from "../components/Table"
+import Button from "../components/Button"
+import Quantity from "../components/Quantity"
+import styles from "../styles/product.module.scss"
 
 type Product = {
     id: number
@@ -73,6 +77,15 @@ export default function Product({product}: InferGetServerSidePropsType<typeof ge
         colour,
         img_url,
     } = product || {}
+
+    const specTable: TableData = [
+        {id: "brand", key: "Brand", value: brand},
+        {id: "weight", key: "Item weight (g)", value: weight},
+        {id: "dimensions", key: "Dimensions (cm)", value: `${height} x ${width} x ${length}`},
+        {id: "model", key: "Item Model number", value: model_code},
+        {id: "colour", key: "Colour", value: colour},
+    ]
+
     return (
         <Layout title={name} description={description}>
             <Section aria-label="Product details">
@@ -86,13 +99,29 @@ export default function Product({product}: InferGetServerSidePropsType<typeof ge
                     />
                 </div>
                 <div>
-                    <h1>{name}</h1>
-                    <span>
-                        {power} // Packet of {quantity}
-                    </span>
-                    <h2>Description</h2>
-                    <p>{description}</p>
-                    <h3>Specifications</h3>
+                    <div className="container" style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
+                        <h1>{name}</h1>
+                        <span className="color-purple-haze">
+                            {power} // Packet of {quantity}
+                        </span>
+                        <div className={styles.priceRow}>
+                            <span className={styles.price}>
+                                {new Intl.NumberFormat("en-GB", {style: "currency", currency: "GBP"}).format(
+                                    price / 100,
+                                )}
+                            </span>
+                            <Quantity />
+                        </div>
+                        <Button fullWidth>Add to cart</Button>
+                    </div>
+                    <div className="bg-hemocyanin container">
+                        <h2>Description</h2>
+                        <p>{description}</p>
+                    </div>
+                    <div className="container">
+                        <h3>Specifications</h3>
+                        <Table data={specTable} />
+                    </div>
                 </div>
             </Section>
         </Layout>

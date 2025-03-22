@@ -1,0 +1,19 @@
+.quantity {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.quantityControl {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.quantityLabel {
+	font-size: 2rem;
+	text-align: center;
+	width: 1.5rem;
+}
