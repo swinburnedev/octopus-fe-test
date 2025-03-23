@@ -12,9 +12,10 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <Image height={30} width={225} src={logo} alt="Octopus Energy logo" />
-            <IconButton alt="Basket icon" title="Basket items">
-                {/* // TODO hide text content */}
-                {basketItemsCount}
+            <IconButton alt="Basket icon" title="Basket items" ariaLabel={`${basketItemsCount} basket items`}>
+                <span aria-hidden="true" className="visually-hidden">
+                    {basketItemsCount}
+                </span>
             </IconButton>
         </header>
     )

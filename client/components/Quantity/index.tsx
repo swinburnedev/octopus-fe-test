@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import Button from '../Button';
-import styles from './quantity.module.scss';
+import Button from "../Button"
+import styles from "./quantity.module.scss"
 
 type QuantityProps = {
     quantity: number
@@ -8,8 +7,6 @@ type QuantityProps = {
 }
 
 const Quantity = ({quantity, setQuantity}: QuantityProps) => {
-    // const [quantity, setQuantity] = useState(1)
-
     const increment = () => {
         setQuantity(quantity + 1)
     }
@@ -36,4 +33,4 @@ const Quantity = ({quantity, setQuantity}: QuantityProps) => {
     )
 }
 
-export default Quantity;
+export default Quantity

@@ -81,7 +81,6 @@ export default function Product({product}: InferGetServerSidePropsType<typeof ge
     } = product || {}
 
     const [selectedQuantity, setSelectedQuantity] = useState(1)
-    console.log(selectedQuantity)
 
     const specTable: TableData = [
         {id: "brand", key: "Brand", value: brand},
