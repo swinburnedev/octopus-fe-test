@@ -111,7 +111,7 @@ export default function Product({product}: InferGetServerSidePropsType<typeof ge
                 <div>
                     <div className="container" style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
                         <h1>{name}</h1>
-                        <span className="color-purple-haze">
+                        <span className="color-purple-haze" style={{fontSize: "1.25rem"}}>
                             {power} // Packet of {quantity}
                         </span>
                         <div className={styles.priceRow}>
@@ -131,7 +131,7 @@ export default function Product({product}: InferGetServerSidePropsType<typeof ge
                         <p>{description}</p>
                     </div>
                     <div className="container">
-                        <h3>Specifications</h3>
+                        <h2>Specifications</h2>
                         <Table data={specTable} />
                     </div>
                 </div>

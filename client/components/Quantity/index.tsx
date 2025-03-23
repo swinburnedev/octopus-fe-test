@@ -19,7 +19,7 @@ const Quantity = ({quantity, setQuantity}: QuantityProps) => {
 
     return (
         <div className={styles.quantity}>
-            <div>Qty</div>
+            <div style={{fontSize: "0.8rem"}}>Qty</div>
             <div className={styles.quantityControl}>
                 <Button disabled={quantity === 1} onClick={decrement}>
                     -

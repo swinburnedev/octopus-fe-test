@@ -39,3 +39,5 @@ Given more time or in a production scenario, the following features would be inc
 - Dynamic product page based on slug/product ID.
 - Basket feedback showing the number of items in the basket.
 - Ability to view the contents of the basket and remove items.
+- UI tweaks to make pixel perfect to align with design, ideally using Figma or similar.
+- Improve responsive layout, particularly at tablet breakpoints.
