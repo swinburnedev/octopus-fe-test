@@ -1,5 +1,6 @@
 import { render, fireEvent } from "@testing-library/react";
 import Product from "../pages/product";
+import BasketProvider from "../contexts/basket"
 
 const mockProduct = {
     id: 1,
@@ -19,8 +20,16 @@ const mockProduct = {
     img_url: "https://i.ibb.co/2nzwxnQ/bulb.png",
 }
 
+const renderProduct = () => {
+    return render(
+        <BasketProvider>
+            <Product product={mockProduct} />
+        </BasketProvider>,
+    )
+}
+
 test("should be able to increase and decrease product quantity", async () => {
-    const {getByText, getByTitle} = render(<Product product={mockProduct} />)
+    const {getByText, getByTitle} = renderProduct()
 
     const increaseQuantity = getByText("+")
 
@@ -37,7 +46,7 @@ test("should be able to increase and decrease product quantity", async () => {
 })
 
 test("should be able to add items to the basket", async () => {
-    const {getByText, getByTitle} = render(<Product product={mockProduct} />)
+    const {getByText, getByTitle} = renderProduct()
 
     const increaseQuantity = getByText("+")
 

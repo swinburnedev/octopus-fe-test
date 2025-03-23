@@ -76,6 +76,11 @@ h2 {
     margin: 1rem 0;
     padding: 1rem;
 
+    &:first-child {
+        margin-top: 0;
+        padding-top: 0.5rem;
+    }
+
     &:last-child {
         margin-bottom: 0;
     }

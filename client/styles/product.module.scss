@@ -1,3 +1,11 @@
+.heroImageContainer {
+    @media screen and (max-width: 1280px) {
+        margin: 2rem 0 0;
+        padding: 0 1rem;
+      
+    }
+}
+
 .priceRow {
 	  display: flex;
     justify-content: space-between;

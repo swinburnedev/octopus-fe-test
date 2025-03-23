@@ -1,6 +1,8 @@
 import type {InferGetServerSidePropsType, GetServerSideProps} from "next"
 import Image from "next/image"
+import {useState} from "react"
 
+import {useBasketContext} from "../contexts/basket"
 import Layout from "../components/Layout"
 import Section from "../components/Section"
 import Table, {type TableData} from "../components/Table"
@@ -78,6 +80,9 @@ export default function Product({product}: InferGetServerSidePropsType<typeof ge
         img_url,
     } = product || {}
 
+    const [selectedQuantity, setSelectedQuantity] = useState(1)
+    console.log(selectedQuantity)
+
     const specTable: TableData = [
         {id: "brand", key: "Brand", value: brand},
         {id: "weight", key: "Item weight (g)", value: weight},
@@ -86,10 +91,16 @@ export default function Product({product}: InferGetServerSidePropsType<typeof ge
         {id: "colour", key: "Colour", value: colour},
     ]
 
+    const {addToBasket} = useBasketContext()
+
+    const handleAddToBasket = () => {
+        addToBasket({id, name, price, quantity: selectedQuantity})
+    }
+
     return (
         <Layout title={name} description={description}>
             <Section aria-label="Product details">
-                <div style={{marginBottom: "1rem"}}>
+                <div className={styles.heroImageContainer}>
                     <Image
                         height={540}
                         width={540}
@@ -110,9 +121,11 @@ export default function Product({product}: InferGetServerSidePropsType<typeof ge
                                     price / 100,
                                 )}
                             </span>
-                            <Quantity />
+                            <Quantity quantity={selectedQuantity} setQuantity={setSelectedQuantity} />
                         </div>
-                        <Button fullWidth>Add to cart</Button>
+                        <Button fullWidth onClick={handleAddToBasket}>
+                            Add to cart
+                        </Button>
                     </div>
                     <div className="bg-hemocyanin container">
                         <h2>Description</h2>
